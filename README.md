@@ -112,7 +112,7 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
     <!-- Market Information Section -->
     <section id="market-info" class="coffee-section bg-light">
         <div class="container">
-            <h2 class="section-title text-center">世界咖啡消耗與出產數量2024</h2>
+            <h2 class="section-title text-center">世界咖啡消耗與出產數量</h2>
             <p class="text-center">資料來源：<a href="https://www.ico.org/" target="_blank">國際咖啡組織（International Coffee Organization）</a></p>
             <div class="text-center">
                 <img src="https://raw.githubusercontent.com/lesyu/coffee/main/website/path/to/market-data-chart.png" 
@@ -190,14 +190,14 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
                         <option value="none">不添加</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-coffee btn-block">調配咖啡</button>
+                <button type="submit" class="btn btn-coffee btn-block mb-4">調配咖啡</button>
+                
+                <!-- 結果顯示區域 -->
+                <div id="resultArea" class="text-center" style="display: none;">
+                    <h3 id="coffeeName" class="mb-3"></h3>
+                    <img id="coffeeImage" src="" alt="咖啡圖片" class="img-fluid rounded" style="max-width: 300px;">
+                </div>
             </form>
-
-            <!-- 結果顯示區域 -->
-            <div id="resultArea" class="text-center" style="display: none;">
-                <h3 id="coffeeName" class="mb-3"></h3>
-                <img id="coffeeImage" src="" alt="咖啡圖片" class="img-fluid rounded" style="max-width: 300px;">
-            </div>
         </div>
     </section>
 
