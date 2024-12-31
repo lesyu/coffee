@@ -240,7 +240,7 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
                 imageUrl = 'https://imgur.com/I7IcHq9';
             } else {
                 coffeeName = '個人風味咖啡';
-                imageUrl = 'https://imgur.com/jCJtx4s';
+                imageUrl = 'https://github.com/lesyu/coffee/blob/7065fab5ed123389dbad85ff73c2388b25fe6663/website/path/to/your-brand-blend-style.jpg';
             }
 
             // 顯示結果
