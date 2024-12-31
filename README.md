@@ -1,3 +1,10 @@
+---
+layout: default
+title: Lescoffee - 咖啡愛好者的天堂
+description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
+---
+
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
@@ -105,7 +112,7 @@
     <!-- Market Information Section -->
     <section id="market-info" class="coffee-section bg-light">
         <div class="container">
-            <h2 class="section-title text-center">世界咖啡消耗與出產數量</h2>
+            <h2 class="section-title text-center">世界咖啡消耗與出產數量2024</h2>
             <p class="text-center">資料來源：<a href="https://www.ico.org/" target="_blank">國際咖啡組織（International Coffee Organization）</a></p>
             <div class="text-center">
                 <img src="https://raw.githubusercontent.com/lesyu/coffee/main/website/path/to/market-data-chart.png" 
@@ -145,7 +152,7 @@
     <section id="custom-blend" class="coffee-section bg-light">
         <div class="container">
             <h2 class="section-title text-center">自行調配咖啡</h2>
-            <form class="custom-form" action="#" method="post">
+            <form class="custom-form" onsubmit="return showCoffeeResult(event)" action="javascript:void(0);">
                 <div class="form-group">
                     <label for="bean-type">咖啡豆類別：</label>
                     <select id="bean-type" name="bean_type" class="form-control">
