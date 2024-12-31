@@ -73,7 +73,7 @@
         margin-bottom: 0;">
         <div class="container">
             <h1 class="display-4">歡迎來到Lescoffee</h1>
-            <p class="lead">探索各類咖啡豆、風味及自定義混合您的完美咖啡。</p>
+            <p class="lead" style="color: #fff !important;">探索各類咖啡豆、風味及自定義混合您的完美咖啡。</p>
         </div>
     </header>
 
@@ -108,7 +108,7 @@
             <h2 class="section-title text-center">世界咖啡消耗與出產數量</h2>
             <p class="text-center">資料來源：<a href="https://www.ico.org/" target="_blank">國際咖啡組織（International Coffee Organization）</a></p>
             <div class="text-center">
-                <img src="https://github.com/lesyu/coffee/blob/main/website/path/to/market-data-chart.png" 
+                <img src="https://raw.githubusercontent.com/lesyu/coffee/main/website/path/to/market-data-chart.png" 
                      alt="咖啡市場數據" 
                      class="img-fluid rounded shadow"
                      style="max-width: 800px;">
