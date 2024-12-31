@@ -194,7 +194,7 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
             </form>
 
             <!-- 結果顯示區域 -->
-            <div id="resultArea" class="text-center mt-4" style="display: none;">
+            <div id="resultArea" class="text-center" style="display: none;">
                 <h3 id="coffeeName" class="mb-3"></h3>
                 <img id="coffeeImage" src="" alt="咖啡圖片" class="img-fluid rounded" style="max-width: 300px;">
             </div>
