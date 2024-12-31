@@ -2,20 +2,17 @@
 title: Lescoffee
 description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
 baseurl: "/coffee"
-url: "https://lesyu.github.io/coffee/"
+url: "https://lesyu.github.io"
 
-# Jekyll 主題設置
-theme: minima  # 使用 minima 主題，這是 GitHub Pages 支援的默認主題
-# 其他可選主題：
-# theme: jekyll-theme-cayman
-# theme: jekyll-theme-minimal
-# theme: jekyll-theme-slate
+# GitHub Pages 設置
+remote_theme: jekyll/minima  # 使用 remote_theme 而不是 theme
 
 # 構建設置
 markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
 # 排除文件
 exclude:
