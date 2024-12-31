@@ -108,7 +108,7 @@
             <h2 class="section-title text-center">世界咖啡消耗與出產數量</h2>
             <p class="text-center">資料來源：<a href="https://www.ico.org/" target="_blank">國際咖啡組織（International Coffee Organization）</a></p>
             <div class="text-center">
-                <img src="C:\Users\AL\OneDrive\Documents\website\path\to\market-data-chart.png" 
+                <img src="https://github.com/lesyu/coffee/blob/main/website/path/to/market-data-chart.png" 
                      alt="咖啡市場數據" 
                      class="img-fluid rounded shadow"
                      style="max-width: 800px;">
@@ -206,34 +206,34 @@
             let coffeeName = '';
             let imageUrl = '';
 
-            // 判斷咖啡種類
-            if (strength === 'mild' && brewMethod === 'espresso' && milkType === 'utf') {
+           if (strength === 'mild' && brewMethod === 'espresso' && milkType === 'utf') {
                 coffeeName = 'Caramel Latte - 焦糖拿鐵';
-                imageUrl = 'C:\Users\AL\OneDrive\Documents\website\path\to\Caramel Latte - 焦糖拿鐵_.jpg';
+                imageUrl = 'https://github.com/lesyu/coffee/blob/main/website/path/to/Caramel%20Latte%20-%20%E7%84%A6%E7%B3%96%E6%8B%BF%E9%90%B5_.jpg';
             } else if (strength === 'strong' && brewMethod === 'espresso' && milkType === 'utf') {
                 coffeeName = 'Cappuccino - 卡布奇諾';
-                imageUrl = 'C:\Users\AL\OneDrive\Documents\website\path\to\Cappuccino - 卡布奇諾_.jpg';
+                imageUrl = 'https://github.com/lesyu/coffee/blob/main/website/path/to/Cappuccino%20-%20%E5%8D%A1%E5%B8%83%E5%A5%87%E8%AB%BE_.jpg';
             } else if (strength === 'strong' && brewMethod === 'espresso' && milkType === 'milk-3-7') {
                 coffeeName = 'Mochaccino - 摩卡奇諾';
-                imageUrl = 'C:\Users\AL\OneDrive\Documents\website\path\to\Mochaccino - 摩卡奇諾_.jpg';
+                imageUrl = 'https://github.com/lesyu/coffee/blob/main/website/path/to/Mochaccino%20-%20%E6%91%A9%E5%8D%A1%E5%A5%87%E8%AB%BE_.jpg';
             } else if (strength === 'extra-strong' && brewMethod === 'espresso' && milkType === 'water') {
                 coffeeName = 'Long Black – 濃黑咖啡';
-                imageUrl = 'C:\Users\AL\OneDrive\Documents\website\path\to\Long Black – 濃黑咖啡_.jpg';
+                imageUrl = 'https://github.com/lesyu/coffee/blob/main/website/path/to/Long%20Black%20%E2%80%93%20%E6%BF%83%E9%BB%91%E5%92%96%E5%95%A1_.jpg';
             } else if (strength === 'strong' && brewMethod === 'espresso' && milkType === 'water') {
                 coffeeName = 'Americano - 美式咖啡';
-                imageUrl = 'C:\Users\AL\OneDrive\Documents\website\path\to\Americano - 美式咖啡 _.jpg';
+                imageUrl = 'https://github.com/lesyu/coffee/blob/main/website/path/to/Americano%20-%20%E7%BE%8E%E5%BC%8F%E5%92%96%E5%95%A1%20_.jpg';
             } else if (strength === 'strong' && brewMethod === 'espresso' && milkType === 'oat') {
                 coffeeName = 'Oat Milk Cappuccino – 燕麥咖啡';
-                imageUrl = 'C:\Users\AL\OneDrive\Documents\website\path\to\Qat Milk Cappuccino – 燕麥咖啡_.jpg';
+                imageUrl = 'https://github.com/lesyu/coffee/blob/main/website/path/to/Qat%20Milk%20Cappuccino%20%E2%80%93%20%E7%87%95%E9%BA%A5%E5%92%96%E5%95%A1_.jpg';
             } else if (strength === 'extra-strong' && 
                      (brewMethod === 'espresso' || brewMethod === 'pour-over') && 
                      milkType === 'none') {
                 coffeeName = 'Espresso - 濃縮咖啡';
-                imageUrl = 'C:\Users\AL\OneDrive\Documents\website\path\to\Expresso - 濃縮咖啡_.jpg';
+                imageUrl = 'https://github.com/lesyu/coffee/blob/main/website/path/to/Expresso%20-%20%E6%BF%83%E7%B8%AE%E5%92%96%E5%95%A1_.jpg';
             } else {
                 coffeeName = '未找到匹配的咖啡';
                 imageUrl = 'C:\Users\AL\OneDrive\Documents\website\path\to\default-coffee.jpg';
             }
+
 
             // 顯示結果
             document.getElementById('coffeeName').textContent = coffeeName;
