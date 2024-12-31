@@ -217,30 +217,30 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
                     // 判斷咖啡種類
             if (strength === 'mild' && brewMethod === 'espresso' && milkType === 'utf') {
                 coffeeName = 'Caramel Latte - 焦糖拿鐵';
-                imageUrl = 'https://imgur.com/YNOKqHs';
+                imageUrl = "https://imgur.com/YNOKqHs";
             } else if (strength === 'strong' && brewMethod === 'espresso' && milkType === 'utf') {
                 coffeeName = 'Cappuccino - 卡布奇諾';
-                imageUrl = 'https://imgur.com/XKf7QII';
+                imageUrl = "https://imgur.com/XKf7QII";
             } else if (strength === 'strong' && brewMethod === 'espresso' && milkType === 'milk-3-7') {
                 coffeeName = 'Mochaccino - 摩卡奇諾';
-                imageUrl = 'https://imgur.com/311teoX';
+                imageUrl = "https://imgur.com/311teoX";
             } else if (strength === 'extra-strong' && brewMethod === 'espresso' && milkType === 'water') {
                 coffeeName = 'Long Black – 濃黑咖啡';
-                imageUrl = 'https://imgur.com/miadzSp';
+                imageUrl = "https://imgur.com/miadzSp";
             } else if (strength === 'strong' && brewMethod === 'espresso' && milkType === 'water') {
                 coffeeName = 'Americano - 美式咖啡';
-                imageUrl = 'https://imgur.com/HUCSCKv';
+                imageUrl = "https://imgur.com/HUCSCKv";
             } else if (strength === 'strong' && brewMethod === 'espresso' && milkType === 'oat') {
                 coffeeName = 'Oat Milk Cappuccino – 燕麥咖啡';
-                imageUrl = 'https://imgur.com/ocNK85f';
+                imageUrl = "https://imgur.com/ocNK85f";
             } else if (strength === 'extra-strong' && 
                      (brewMethod === 'espresso' || brewMethod === 'pour-over') && 
                      milkType === 'none') {
                 coffeeName = 'Espresso - 濃縮咖啡';
-                imageUrl = 'https://imgur.com/I7IcHq9';
+                imageUrl = "https://imgur.com/I7IcHq9";
             } else {
                 coffeeName = '個人風味咖啡';
-                imageUrl = 'https://github.com/lesyu/coffee/blob/7065fab5ed123389dbad85ff73c2388b25fe6663/website/path/to/your-brand-blend-style.jpg';
+                imageUrl = "https://github.com/lesyu/coffee/blob/7065fab5ed123389dbad85ff73c2388b25fe6663/website/path/to/your-brand-blend-style.jpg";
             }
 
             // 顯示結果
