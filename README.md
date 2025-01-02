@@ -214,33 +214,33 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
             let coffeeName = '';
             let imageUrl = '';
 
-                    // 判斷咖啡種類
+            // 判斷咖啡種類
             if (strength === 'mild' && brewMethod === 'espresso' && milkType === 'utf') {
                 coffeeName = 'Caramel Latte - 焦糖拿鐵';
-                imageUrl = "https://imgur.com/YNOKqHs";
+                imageUrl = 'https://raw.githubusercontent.com/lesyu/coffee/main/website/path/to/Caramel%20Latte%20-%20焦糖拿鐵_.jpg';
             } else if (strength === 'strong' && brewMethod === 'espresso' && milkType === 'utf') {
                 coffeeName = 'Cappuccino - 卡布奇諾';
-                imageUrl = "https://imgur.com/XKf7QII";
+                imageUrl = 'https://raw.githubusercontent.com/lesyu/coffee/main/website/path/to/Cappuccino%20-%20卡布奇諾_.jpg';
             } else if (strength === 'strong' && brewMethod === 'espresso' && milkType === 'milk-3-7') {
-                coffeeName = 'Mochaccino - 摩卡奇諾';
-                imageUrl = "https://imgur.com/311teoX";
+                coffeeName  = 'Mochaccino - 摩卡奇諾';
+               imageUrl = 'https://raw.githubusercontent.com/lesyu/coffee/main/website/path/to/Mochaccino%20-%20摩卡奇諾_.jpg';
             } else if (strength === 'extra-strong' && brewMethod === 'espresso' && milkType === 'water') {
                 coffeeName = 'Long Black – 濃黑咖啡';
-                imageUrl = "https://imgur.com/miadzSp";
+                imageUrl = 'https://raw.githubusercontent.com/lesyu/coffee/main/website/path/to/Long%20Black%20–%20濃黑咖啡_.jpg';
             } else if (strength === 'strong' && brewMethod === 'espresso' && milkType === 'water') {
                 coffeeName = 'Americano - 美式咖啡';
-                imageUrl = "https://imgur.com/HUCSCKv";
+                imageUrl = 'website/path/to/Americano - 美式咖啡 _.jpg';
             } else if (strength === 'strong' && brewMethod === 'espresso' && milkType === 'oat') {
                 coffeeName = 'Oat Milk Cappuccino – 燕麥咖啡';
-                imageUrl = "https://imgur.com/ocNK85f";
+                imageUrl = 'https://raw.githubusercontent.com/lesyu/coffee/main/website/path/to/Qat%20Milk%20Cappuccino%20–%20燕麥咖啡_.jpg';
             } else if (strength === 'extra-strong' && 
                      (brewMethod === 'espresso' || brewMethod === 'pour-over') && 
                      milkType === 'none') {
                 coffeeName = 'Espresso - 濃縮咖啡';
-                imageUrl = "https://imgur.com/I7IcHq9";
+                imageUrl = 'https://raw.githubusercontent.com/lesyu/coffee/main/website/path/to/Expresso%20-%20濃縮咖啡_.jpg';
             } else {
-                coffeeName = '個人風味咖啡';
-                imageUrl = "https://github.com/lesyu/coffee/blob/7065fab5ed123389dbad85ff73c2388b25fe6663/website/path/to/your-brand-blend-style.jpg";
+                coffeeName = '未找到匹配的咖啡';
+                imageUrl = 'https://raw.githubusercontent.com/lesyu/coffee/main/website/path/to/your-brand-blend-style.jpg';
             }
 
             // 顯示結果
