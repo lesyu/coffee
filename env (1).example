@@ -4,3 +4,9 @@ CONTENTFUL_DELIVERY_TOKEN=X9V3mZMNN5Lyx7yS9HkxNT-ytLJ9WSRxlI18SIEZ44Y
 CONTENTFUL_PREVIEW_TOKEN=xqad-RrP9iHoeA6V5912kVU_X7JkXLgY1WbS8KzNk6Q
 
 DATABASE_URL=postgresql://postgres:[Yu024680*]@db.frugoxerstqqlzuuavze.supabase.co:5432/postgres
+
+user=postgres.frugoxerstqqlzuuavze 
+password=[Yu024680*] 
+host=aws-0-ap-southeast-1.pooler.supabase.com
+port=6543
+dbname=postgres
