@@ -577,4 +577,4 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
 </body>
 </html> 
 
-?branch=[![Netlify Status](https://api.netlify.com/api/v1/badges/40c764a6-c2fb-4cb7-8831-a83291a6f4bb/deploy-status)](https://app.netlify.com/sites/coffeeles/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/40c764a6-c2fb-4cb7-8831-a83291a6f4bb/deploy-status)](https://app.netlify.com/sites/coffeeles/deploys)
