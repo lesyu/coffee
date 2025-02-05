@@ -3,7 +3,8 @@ CONTENTFUL_MANAGEMENT_TOKEN=
 CONTENTFUL_DELIVERY_TOKEN=X9V3mZMNN5Lyx7yS9HkxNT-ytLJ9WSRxlI18SIEZ44Y
 CONTENTFUL_PREVIEW_TOKEN=xqad-RrP9iHoeA6V5912kVU_X7JkXLgY1WbS8KzNk6Q
 
-DATABASE_URL=postgresql://postgres:[Yu024680*]@db.frugoxerstqqlzuuavze.supabase.co:5432/postgres
+REACT_SUPABASE_DATABASE_URL=https://frugoxerstqqlzuuavze.supabase.co
+REACT_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZydWdveGVyc3RxcWx6dXVhdnplIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg2NTUwMTAsImV4cCI6MjA1NDIzMTAxMH0.-WtJTxHfIrCAl_hYYnHcq45vNDD2Kf2pWkDv5NuVeOc
 
 user=postgres.frugoxerstqqlzuuavze 
 password=[Yu024680*] 
