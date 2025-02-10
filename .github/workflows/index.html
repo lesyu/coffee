@@ -428,15 +428,15 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
             script.async = true;
             script.defer = true;
             script.setAttribute('data-init', `{
-                "api_key": "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",
-                "model": "deepseek/deepseek-r1:free",
+                "api_key": "${process.env.openRouterApiKey}",
+                "model": "google/gemini-2.0-flash-lite-preview-02-05:free",
                 "temperature": 0.7
             }`);
             document.body.appendChild(script);
         })();
 
         // OpenRouter AI 聊天助手
-        function sendMessageToOpenRouter(message) {
+        async function sendMessageToOpenRouter(message) {
             const chatContent = document.getElementById('chat-content');
             // Add loading message
             const loadingMessage = document.createElement('div');
@@ -445,57 +445,105 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
             chatContent.appendChild(loadingMessage);
             chatContent.scrollTop = chatContent.scrollHeight;
 
-            fetch('https://openrouter.ai/api/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Authorization': 'Bearer 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',
-                    'Content-Type': 'application/json',
-                    'Referer': window.location.href,
-                    'X-Title': 'Lescoffee Chat'
-                },
-                body: JSON.stringify({
-                    model: "deepseek/deepseek-r1:free",
-                    messages: [{
-                        role: "user", 
-                        content: message
-                    }],
-                    temperature: 0.7
-                })
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`API request failed: ${response.status} ${response.statusText}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                loadingMessage.remove(); // Remove loading message
-                if (!data.choices?.[0]?.message?.content) {
-                    throw new Error('Invalid response format from API');
-                }
-                const reply = data.choices[0].message.content;
+            try {
+                const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${process.env.openRouterApiKey}`,
+                        'Content-Type': 'application/json',
+                        'Referer': window.location.href,
+                        'X-Title': 'Lescoffee Chat'
+                    },
+                    body: JSON.stringify({
+                        model: "google/gemini-2.0-flash-lite-preview-02-05:free",
+                        messages: [{
+                            role: "user", 
+                            content: message
+                        }],
+                        temperature: 0.7
+                    })
+                });
+
+                const data = await response.json();
+                console.log('API Response:', data); // Log the entire response
+
+                const reply = data.response?.text || "No response"; // Adjust extraction based on the logged structure
+
+                loadingMessage.remove();
                 chatContent.innerHTML += `<div class='chat-message'>Assistant: ${reply}</div>`;
                 chatContent.scrollTop = chatContent.scrollHeight;
-                return reply; // Return the received message
-            })
-            .catch(error => {
-                loadingMessage.remove(); // Remove loading message
+
+                // Save user message to the database
+                await saveChatData(message, reply);
+
+                return reply;
+            } catch (error) {
+                loadingMessage.remove();
                 console.error('Error:', error);
-                const retry = (attemptsLeft) => {
+                const retry = attemptsLeft => {
                     if(attemptsLeft > 0) {
                         console.log(`Retrying... attempts left: ${attemptsLeft}`);
                         setTimeout(() => {
-                            fetch(...arguments[0])
-                                .then(response => response.json())
-                                .then(data => data.choices[0].message.content) // Get message from response
+                            sendMessageToOpenRouter(message)
+                                .then(reply => {
+                                    chatContent.innerHTML += `<div class='chat-message'>Assistant: ${reply}</div>`;
+                                    chatContent.scrollTop = chatContent.scrollHeight;
+                                })
                                 .catch(err => retry(attemptsLeft - 1));
-                        }, 35000);
+                        }, 5000); // Reduced from 35000 to 5000 for faster retry
                     } else {
-                        const chatContent = document.getElementById('chat-content');
                         chatContent.innerHTML += `<div class='chat-message error'>系統繁忙，請稍後再試</div>`;
                     }
                 };
                 retry(2);
+            }
+        }
+
+        async function saveChatData(userMessage, botResponse) {
+            const { data, error } = await supabase
+                .from('Discuss') // Your table name
+                .insert([
+                    { 
+                        created_at: new Date(), // Current timestamp
+                        comment: userMessage, // User's message
+                        ip_add: 'USER_IP_ADDRESS', // Replace with actual user IP if needed
+                         // Generate or assign a UUID if needed
+                    },
+                    { 
+                        created_at: new Date(), // Current timestamp
+                        comment: botResponse, // Assistant's response
+                        ip_add: 'USER_IP_ADDRESS', // Replace with actual user IP if needed
+                         // Generate or assign a UUID if needed
+                    }
+                ]);
+
+            if (error) {
+                console.error('Error saving chat data:', error);
+            } else {
+                console.log('Chat data saved:', data);
+            }
+        }
+
+        async function fetchChatHistory() {
+            const { data, error } = await supabase
+                .from('Discuss')
+                .select('*')
+                .order('created_at', { ascending: true });
+
+            if (error) {
+                console.error('Error fetching chat history:', error);
+            } else {
+                console.log('Chat history retrieved:', data);
+                displayChatHistory(data);
+            }
+        }
+
+        function displayChatHistory(chatHistory) {
+            const chatContent = document.getElementById('chat-content');
+            chatContent.innerHTML = ''; // Clear existing chat content
+
+            chatHistory.forEach(chat => {
+                chatContent.innerHTML += `<div class='chat-message'>Assistant: ${chat.comment}</div>`;
             });
         }
     </script>
@@ -512,7 +560,7 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
             <button id="close-chat" style="background: none; border: none; color: white; cursor: pointer;">&times;</button>
         </div>
         <div id="chat-content" style="padding: 10px; height: 320px; overflow-y: auto;">
-            <div class="chat-message">Assistant: 想知道什麼咖啡智識...</div>
+            <div class="chat-message">Assistant: 想知道什麼咖啡知識...</div>
         </div>
         <div style="display: flex; gap: 10px; align-items: center; margin: 10px;">
             <input type="text" id="chat-input" placeholder="Type your message..." style="flex: 1; padding: 10px;" onkeypress="if(event.keyCode==13){document.getElementById('submit-message').click(); return false;}">
@@ -574,7 +622,34 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('create-db').addEventListener('click', () => {
+            const request = indexedDB.open('ChatHistory', 1);
+
+            request.onupgradeneeded = (event) => {
+                const db = event.target.result;
+                const objectStore = db.createObjectStore('id', { keyPath: 'id' });
+                objectStore.createIndex('created_at', 'created_at', { unique: false });
+                objectStore.createIndex('add_ip', 'add_ip', { unique: false });
+                objectStore.createIndex('comment', 'comment', { unique: false });
+            };
+
+            request.onsuccess = () => {
+                console.log('Database created successfully');
+            };
+
+            request.onerror = (event) => {
+                console.error('Database error:', event.target.error);
+            };
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchChatHistory(); // Fetch chat history when the page loads
+        });
+    </script>
 </body>
 </html> 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/40c764a6-c2fb-4cb7-8831-a83291a6f4bb/deploy-status)](https://app.netlify.com/sites/coffeeles/deploys)
