@@ -424,12 +424,12 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
     <script>
         (function() {
             var script = document.createElement('script');
-            script.src = 'https://openrouter.ai/v1/chat.js';
+            script.src = 'https://openrouter.ai/api/v1/chat/completions';
             script.async = true;
             script.defer = true;
             script.setAttribute('data-init', `{
-                "api_key": "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",
-                "model": "deepseek/deepseek-r1:free",
+                "api_key": "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",
+                "model": "deepseek/deepseek-r1-distill-qwen-14b:free",
                 "temperature": 0.7
             }`);
             document.body.appendChild(script);
@@ -448,13 +448,13 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
             fetch('https://openrouter.ai/api/v1/chat/completions', {
                 method: 'POST',
                 headers: {
-                    'Authorization': 'Bearer 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',
+                    'Authorization': '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',
                     'Content-Type': 'application/json',
                     'Referer': window.location.href,
                     'X-Title': 'Lescoffee Chat'
                 },
                 body: JSON.stringify({
-                    model: "deepseek/deepseek-r1:free",
+                    model: "deepseek/deepseek-r1-distill-qwen-14b:free",
                     messages: [{
                         role: "user", 
                         content: message
