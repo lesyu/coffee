@@ -454,7 +454,7 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
             chatContent.scrollTop = chatContent.scrollHeight;
 
             try {
-                const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+                const response = await fetch('https://openrouter.ai/api/v1', {
                     method: 'POST',
                     headers: {
                         'Authorization': 'Bearer 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', // Replace with your actual API key
