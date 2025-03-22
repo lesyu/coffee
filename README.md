@@ -231,7 +231,7 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
                                 <small class="text-muted">即時更新中 - <span id="online-users">356</span> 人正在討論</small>
                             </div>
                             <div class="mt-2">
-                                <small class="text-muted">最新留言：<span id="latest-comment">台北網友分享冰滴咖啡製作心得</span>...</small>
+                                <small class="text-muted">最新留言：<span id="latest-comment">網友分享冰滴咖啡製作心得</span>...</small>
                             </div>
                         </li>
                     </ul>
@@ -424,12 +424,12 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
     <script>
         (function() {
             var script = document.createElement('script');
-            script.src = 'https://openrouter.ai/v1/chat.js';
+            script.src = '[https://openrouter.ai/v1/chat.js](https://openrouter.ai/api/v1/chat/completions)';
             script.async = true;
             script.defer = true;
             script.setAttribute('data-init', `{
                 "api_key": "${process.env.openRouterApiKey}",
-                "model": "google/gemini-2.0-flash-lite-preview-02-05:free",
+                "model": "deepseek/deepseek-r1-zero:free",
                 "temperature": 0.7
             }`);
             document.body.appendChild(script);
@@ -455,7 +455,7 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
                         'X-Title': 'Lescoffee Chat'
                     },
                     body: JSON.stringify({
-                        model: "google/gemini-2.0-flash-lite-preview-02-05:free",
+                        model: "deepseek/deepseek-r1-zero:free",
                         messages: [{
                             role: "user", 
                             content: message
