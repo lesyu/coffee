@@ -195,9 +195,9 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
                             <p class="mb-0 text-muted">熱門討論：<a href="https://www.openrice.com/zh/hongkong/coffee-guide" target="_blank">OpenRice咖啡達人指南</a>・<a href="https://www.discuss.com.hk/forumdisplay.php?fid=123" target="_blank">香港討論區即時更新 <i class="bi bi-chat ms-1"></i></a></p>
                             <script>
                                 const comments = [
-                                    "東京網友分享冰滴咖啡製作心得",
-                                    "倫敦咖啡師示範法壓壺技巧",
-                                    "舊金山最新冷萃咖啡配方分享"
+                                    "網友分享冰滴咖啡製作心得",
+                                    "咖啡師示範法壓壺技巧",
+                                    "最新冷萃咖啡配方分享"
                                 ];
                                 setInterval(() => {
                                     document.querySelectorAll('small script')[1].innerHTML = 
