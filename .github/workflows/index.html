@@ -163,8 +163,8 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
                                 </small>
                                 <span class="badge bg-primary">咖啡知識</span>
                             </div>
-                            <h5><a href="https://sca.coffee/" target="_blank">【現場更新】咖啡豆選購指南 <i class="bi bi-cup-hot ms-2"></i></a></h5>
-                            <p class="mb-0 text-muted">直播討論（下次更新 <span id="next-update-time"></span>）：<a href="http://www.taiwancoffee.org.tw/arabica" target="_blank">不同產區阿拉比卡豆</a>的風味差異比較...</p>
+                            <h5><a href="https://sca.coffee/" target="_blank">【現場更新】咖啡餐廳指南 <i class="bi bi-cup-hot ms-2"></i></a></h5>
+                            <p class="mb-0 text-muted">直播討論（下次更新 <span id="next-update-time"></span>）：<a href="https://www.timeout.com.hk/hong-kong/hk/%E9%A4%90%E5%BB%B3/%E9%9A%B1%E4%B8%96%E5%92%96%E5%95%A1%E5%BA%97a" target="_blank">不同產區阿拉比卡豆</a>的風味差異比較...</p>
                             <script>
                                 function updateLiveTime() {
                                     const now = new Date();
@@ -192,12 +192,12 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
                                 <span class="badge bg-success">沖煮技巧</span>
                             </div>
                             <h5><a href="https://www.umagazine.com.hk/category/coffee" target="_blank">【香港實測】本地咖啡師手沖秘技 <i class="bi bi-person ms-2"></i></a></h5>
-                            <p class="mb-0 text-muted">熱門討論：<a href="https://www.openrice.com/zh/hongkong/coffee-guide" target="_blank">OpenRice咖啡達人指南</a>・<a href="https://www.discuss.com.hk/forumdisplay.php?fid=123" target="_blank">香港討論區即時更新 <i class="bi bi-chat ms-1"></i></a></p>
+                            <p class="mb-0 text-muted">熱門討論：<a href="https://guide.michelin.com/hk/zh_HK/article/features/Hongkong-michelin-restaurant-coffee-local" target="_blank">OpenRice咖啡達人指南</a>・<a href="https://www.discuss.com.hk/forumdisplay.php?fid=123" target="_blank">香港討論區即時更新 <i class="bi bi-chat ms-1"></i></a></p>
                             <script>
                                 const comments = [
-                                    "東京網友分享冰滴咖啡製作心得",
-                                    "倫敦咖啡師示範法壓壺技巧",
-                                    "舊金山最新冷萃咖啡配方分享"
+                                    "網友分享冰滴咖啡製作心得",
+                                    "咖啡師示範法壓壺技巧",
+                                    "最新冷萃咖啡配方分享"
                                 ];
                                 setInterval(() => {
                                     document.querySelectorAll('small script')[1].innerHTML = 
@@ -424,12 +424,12 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
     <script>
         (function() {
             var script = document.createElement('script');
-            script.src = 'https://openrouter.ai/v1/chat.js';
+            script.src = 'https://openrouter.ai/api/v1/chat/completions';
             script.async = true;
             script.defer = true;
             script.setAttribute('data-init', `{
                 "api_key": "${process.env.openRouterApiKey}",
-                "model": "google/gemini-2.0-flash-lite-preview-02-05:free",
+                "model": "deepseek/deepseek-r1-zero:free",
                 "temperature": 0.7
             }`);
             document.body.appendChild(script);
@@ -449,13 +449,13 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
                 const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
                     method: 'POST',
                     headers: {
-                        'Authorization': `Bearer: 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`,
+                        'Authorization': `Bearer: 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`,
                         'Content-Type': 'application/json',
                         'Referer': window.location.href,
                         'X-Title': 'Lescoffee Chat'
                     },
                     body: JSON.stringify({
-                        model: "deepseek/deepseek-r1-distill-qwen-14b:free",
+                        model: "deepseek/deepseek-r1-zero:free",
                         messages: [{
                             role: "user", 
                             content: message
