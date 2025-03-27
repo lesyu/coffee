@@ -174,20 +174,21 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
                             <h5><a href="https://sca.coffee/" target="_blank">【現場更新】咖啡豆選購指南 <i class="bi bi-cup-hot ms-2"></i></a></h5>
                             <p class="mb-0 text-muted">直播討論（下次更新 <span id="next-update-time"></span>）：<a href="http://www.taiwancoffee.org.tw/arabica" target="_blank">不同產區阿拉比卡豆</a>的風味差異比較...</p>
                             <script>
-                                function updateLiveTime() {
-                                    const now = new Date();
-                                    now.setHours(now.getHours() + 4);
-                                    document.getElementById('next-update-time').textContent = 
-                                        `${now.getHours().toString().padStart(2,'0')}:${now.getMinutes().toString().padStart(2,'0')}`;
-                                    
-                                    // 隨機更新在線人數
-                                    document.getElementById('online-users').textContent = 
-                                        Math.floor(Math.random() * (500 - 300 + 1)) + 300;
-                                }
-                                updateLiveTime();
-                                setInterval(updateLiveTime, 4 * 60 * 60 * 1000);
-                                setInterval(() => document.getElementById('online-users').textContent = 
-                                    Math.floor(Math.random() * (500 - 300 + 1)) + 300, 5000);
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    function updateLiveTime() {
+                                        const now = new Date();
+                                        now.setHours(now.getHours() + 4);
+                                        document.getElementById('next-update-time').textContent = 
+                                            `${now.getHours().toString().padStart(2,'0')}:${now.getMinutes().toString().padStart(2,'0')}`;
+                                        
+                                        // 隨機更新在線人數
+                                        document.getElementById('online-users').textContent = 
+                                            Math.floor(Math.random() * (500 - 300 + 1)) + 300;
+                                    }
+                                    updateLiveTime();
+                                    setInterval(updateLiveTime, 4 * 60 * 60 * 1000);
+                                    setInterval(() => document.getElementById('online-users').textContent = 
+                                        Math.floor(Math.random() * (500 - 300 + 1)) + 300}, 5000);
                             </script>
                         </li>
                         <li class="list-group-item">
@@ -436,8 +437,8 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
             script.async = true;
             script.defer = true;
             script.setAttribute('data-init', `{
-                "api_key": "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",
-                "model": "deepseek/deepseek-r1-zero:free",
+                "api_key": "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",
+                "model": "google/gemini-2.0-flash-001",
                 
             }`);
             document.body.appendChild(script);
@@ -454,15 +455,15 @@ description: 探索各類咖啡豆、風味及自定義混合您的完美咖啡
             chatContent.scrollTop = chatContent.scrollHeight;
 
             try {
-                const response = await fetch('https://openrouter.ai/api/v1', {
+                const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
                     method: 'POST',
                     headers: {
-                        'Authorization': 'Bearer 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', // Replace with your actual API key
+                        'Authorization': 'Bearer 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', // Replace with your actual API key
                         'Content-Type': 'application/json',
                         'X-Title': 'Lescoffee Chat' // Optional
                     },
                     body: JSON.stringify({
-                        model: "deepseek/deepseek-r1-zero:free",
+                        model: "google/gemini-2.0-flash-001",
                         messages: [
                             {
                                 role: "user",
