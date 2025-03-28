@@ -13,6 +13,6 @@
             "ip_add": "168.8.8.1"
         }
     ],
-    "supabaseUrl": "https://your-project-ref.supabase.co",
-    "supabaseKey": "YOUR_SUPABASE_ANON_KEY"
+    "supabaseUrl": "https://frugoxerstqqlzuuavze.supabase.co:3000",
+    "supabaseKey": "process.env.SUPABASE_KEY"
 }
